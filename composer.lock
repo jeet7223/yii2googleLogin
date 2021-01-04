@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "fd86c94c9b5cf03878b83db9b1930372",
+    "content-hash": "12e3f8a689cd9ff3e12b65da9bf3385c",
     "packages": [
         {
             "name": "bower-asset/bootstrap",
@@ -32,7 +32,7 @@
             "version": "3.3.11",
             "source": {
                 "type": "git",
-                "url": "https://github.com/RobinHerbots/Inputmask.git",
+                "url": "git@github.com:RobinHerbots/Inputmask.git",
                 "reference": "5e670ad62f50c738388d4dcec78d2888505ad77b"
             },
             "dist": {
@@ -351,6 +351,49 @@
                 "html"
             ],
             "time": "2020-06-29T00:56:53+00:00"
+        },
+        {
+            "name": "kotchuprik/yii2-instagram-authclient",
+            "version": "v1.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/kotchuprik/yii2-instagram-authclient.git",
+                "reference": "63e468b402b0a2b5cf31d03cdf0eaac713a1ed7f"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/kotchuprik/yii2-instagram-authclient/zipball/63e468b402b0a2b5cf31d03cdf0eaac713a1ed7f",
+                "reference": "63e468b402b0a2b5cf31d03cdf0eaac713a1ed7f",
+                "shasum": ""
+            },
+            "require": {
+                "yiisoft/yii2-authclient": "~2.0@dev"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "kotchuprik\\authclient\\": ""
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Constantin Chuprik",
+                    "email": "constantinchuprik@gmail.com"
+                }
+            ],
+            "description": "Instagram extenion for using via yii2-authclient",
+            "homepage": "http://github.com/kotchuprik/yii2-instagram-authclient",
+            "keywords": [
+                "authclient",
+                "instagram",
+                "oauth",
+                "yii2"
+            ],
+            "time": "2015-01-25T19:16:17+00:00"
         },
         {
             "name": "swiftmailer/swiftmailer",

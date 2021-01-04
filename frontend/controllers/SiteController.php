@@ -65,6 +65,26 @@ class SiteController extends Controller
                 'successCallback'   => [$this, 'GoogleSuccessCallback'],
                 'successUrl'        => Url::to(['site/index']), 
             ],
+            'loginfb'       => [
+                'class'             => 'yii\authclient\AuthAction',
+                'successCallback'   => [$this, 'fbSuccessCallback'],
+                'successUrl'        => Url::to(['site/index']), 
+            ],
+            'loginLinkedIn' => [
+                'class'             => 'yii\authclient\AuthAction',
+                'successCallback'   => [$this, 'LinkedInSuccessCallback'],
+                'successUrl'        => Url::to(['site/index']), 
+            ],
+            'loginTwitter' => [
+                'class'             => 'yii\authclient\AuthAction',
+                'successCallback'   => [$this, 'TwitterSuccessCallback'],
+                'successUrl'        => Url::to(['site/index']), 
+            ],
+            'loginInstagram' => [
+                'class'             => 'yii\authclient\AuthAction',
+                'successCallback'   => [$this, 'InstagramSuccessCallback'],
+                'successUrl'        => Url::to(['site/index']), 
+            ]
          
         ];
     }
@@ -108,6 +128,131 @@ class SiteController extends Controller
 
         return true;
     }
+     public function LinkedInSuccessCallback($client)
+    {
+        $linkedInAttributes = $client->getUserAttributes();
+
+        if(empty($linkedInAttributes)) {
+           Yii::$app->session->setFlash('error', 'Something went wrong');
+        }
+        $linkedInAttributes['first_name'] = (!empty($linkedInAttributes['first_name'])) ? $linkedInAttributes['first_name'] : null;
+        $linkedInAttributes['last_name'] = (!empty($linkedInAttributes['last_name'])) ? $linkedInAttributes['last_name'] : null;
+
+        $customer = User::findByEmail($linkedInAttributes['email']);
+
+        if (empty($customer)) {
+            $customer               = new User();
+            $customer->usernamer   = $linkedInAttributes['first_name'];
+            $customer->email        = $linkedInAttributes['email'];
+            $customer->setPassword(Yii::$app->security->generateRandomString(12));
+            $customer->generateAuthKey();
+            $customer->generateEmailVerificationToken();
+            $customer->status     = 10;
+            $customer->save(false);
+
+        }
+
+        Yii::$app->user->login($customer);
+        Yii::$app->session->setFlash('success', 'Linkedin login successfull');
+
+        return true;
+    }
+    public function InstagramSuccessCallback($client)
+    {
+        $InstagramAttributes = $client->getUserAttributes();
+
+        if(empty($linkedInAttributes)) {
+           Yii::$app->session->setFlash('error', 'Something went wrong');
+        }
+        $InstagramAttributes['first_name'] = (!empty($InstagramAttributes['first_name'])) ? $InstagramAttributes['first_name'] : null;
+        $InstagramAttributes['last_name'] = (!empty($InstagramAttributes['last_name'])) ? $InstagramAttributes['last_name'] : null;
+
+        $customer = User::findByEmail($linkedInAttributes['email']);
+
+        if (empty($customer)) {
+            $customer               = new User();
+            $customer->usernamer   = $InstagramAttributes['first_name'];
+            $customer->email        = $InstagramAttributes['email'];
+            $customer->setPassword(Yii::$app->security->generateRandomString(12));
+            $customer->generateAuthKey();
+            $customer->generateEmailVerificationToken();
+            $customer->status     = 10;
+            $customer->save(false);
+
+        }
+
+        Yii::$app->user->login($customer);
+        Yii::$app->session->setFlash('success', 'Linkedin login successfull');
+
+        return true;
+    }
+
+    /**
+     * @param $client
+     * @return bool
+     */
+    public function TwitterSuccessCallback($client)
+    {
+        $twitterAttributes = $client->getUserAttributes();
+
+        if(empty($twitterAttributes)) {
+             Yii::$app->session->setFlash('error', 'Something went wrong');
+        }
+
+        $twitterAttributes['name'] = explode(' ', $twitterAttributes['name']);
+
+        $twitterAttributes['first_name'] = (!empty($twitterAttributes['name'])) ? $twitterAttributes['name'][0] : null;
+        $twitterAttributes['last_name'] = (!empty($twitterAttributes['name'])) ? $twitterAttributes['name'][1] : null;
+
+        $customer = User::findByEmail($twitterAttributes['email']);
+
+        if (empty($customer)) {
+            $customer               = new Customer();
+            $customer->username   = $twitterAttributes['first_name'];
+            $customer->email        = $twitterAttributes['email'];
+            $customer->setPassword(Yii::$app->security->generateRandomString(12));
+            $customer->generateAuthKey();
+            $customer->generateEmailVerificationToken();
+            $customer->status     = 10;
+            $customer->save(false);
+        }
+
+        Yii::$app->user->login($customer);
+        Yii::$app->session->setFlash('success', 'Twitter login successfull');
+
+        return true;
+    }
+
+    public function fbSuccessCallback($client)
+    {
+        $fbAttributes = $client->getUserAttributes();
+        if (empty($fbAttributes)) {
+            Yii::$app->session->setFlash('error', 'Something went wrong');
+            return false;
+        }
+
+        $fbAttributes['first_name'] = (!empty($fbAttributes['name'])) ? explode(' ', $fbAttributes['name'])[0] : null;
+        $fbAttributes['last_name'] = (!empty($fbAttributes['name'])) ? explode(' ', $fbAttributes['name'])[1] : null;
+
+        $customer = User::findByEmail($fbAttributes['email']);
+
+        if (empty($customer)) {
+            $customer               = new User();
+            $customer->username   = $fbAttributes['first_name'];
+            $customer->email        = $fbAttributes['email'];
+            $customer->setPassword(Yii::$app->security->generateRandomString(12));
+            $customer->generateAuthKey();
+            $customer->generateEmailVerificationToken();
+            $customer->status     = 10;
+            $customer->save(false);
+        }
+
+        Yii::$app->user->login($customer);
+        Yii::$app->session->setFlash('success', 'Facebook login successfull');
+
+        return true;
+    }
+
     public function actionIndex()
     {
         return $this->render('index');

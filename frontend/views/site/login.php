@@ -14,12 +14,14 @@ $this->params['breadcrumbs'][] = $this->title;
 <style>
 .btn-as{
   border: none;
-  color: white;
+  color: white !important;
+  text-decoration: unset !important;
   padding: 15px 32px;
   text-align: center;
   text-decoration: none;
   display: inline-block;
   font-size: 16px;
+  width:100%;
 }
 .btn-primary{
   border: 0;
@@ -32,8 +34,23 @@ $this->params['breadcrumbs'][] = $this->title;
   font-size: 16px;
   
 }
+.btn-as:hover{
+  color:#ffffff !important;
+}
 .googleplus{
   background-color:#d34836;
+}
+.facebook{
+  background-color:#3b5998;
+}
+.linkedin{
+background-color:#0077b5 !important;
+}
+.twitter{
+ background-color:#50abf1 !important;
+}
+.instagram{
+  background-image: linear-gradient(to bottom, #6b4bc6 , #e84965,#ffc77e);
 }
 
 </style>
@@ -58,29 +75,96 @@ $this->params['breadcrumbs'][] = $this->title;
                     <br>
                     Need new verification email? <?= Html::a('Resend', ['site/resend-verification-email']) ?>
                 </div>
+                                <div class="row">
+
+                                <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 column-centered">
+
+
+<?= Html::submitButton('Login', ['class' => 'btn-as btn-primary', 'name' => 'login-button']) ?>
+</div>
+</div>
+<br>
+<div class="text-center"><h3>Or Login with</h3></div>
+<hr> </hr> 
 
              
                 <div class="row">
-                <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12 column-centered">
-                                    <?= Html::submitButton('Login', ['class' => 'btn btn-primary', 'name' => 'login-button']) ?>
-                </div>
-                <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12 column-centered">
-                                <div class="a-center">
+                <div class="col-lg-6">
                                     <?php
                                     $authAuthChoice = AuthChoice::begin([
                                         'baseAuthUrl' => ['site/loginGoogle']
                                     ]);
                                     foreach ($authAuthChoice->getClients() as $client) {
                                         if($client->getName() == 'google') {
-                                            echo $authAuthChoice->clientLink($client,'<i class="fa fa-google-plus"></i> GOOGLE',['class'=>'btn-as googleplus']);
+                                            echo $authAuthChoice->clientLink($client,'<i class="fa fa-fw fa-facebook"></i> GOOGLE',['class'=>'btn-as googleplus']);
                                         }
                                     }
                                     AuthChoice::end();
                                     ?>
                                 </div>
+    
+                        <div class="col-lg-6">
+                                  <?php
+                                $authAuthChoice = AuthChoice::begin([
+                                      'baseAuthUrl' => ['site/loginfb']
+                                ]);
+                                foreach ($authAuthChoice->getClients() as $client) {
+                                    if($client->getName() == 'facebook') {
+                                        echo $authAuthChoice->clientLink($client,'<i class="fa fa-fw fa-facebook"></i> FACEBOOK',['class'=>'btn-as facebook']);
+                                    }
+                                }
+                                AuthChoice::end();
+                                ?>
+                              </div>
+                       </div>
+                       <br>
+                       <div class="row">
+                        <div class="col-lg-6">
+                                    <?php
+                                    $authAuthChoice = AuthChoice::begin([
+                                        'baseAuthUrl' => ['site/loginLinkedIn']
+                                    ]);
+                                    foreach ($authAuthChoice->getClients() as $client) {
+                                        if($client->getName() == 'linkedin') {
+                                            echo $authAuthChoice->clientLink($client,'linkedin',['class'=>'btn-as linkedin']);
+                                        }
+                                    }
+                                    AuthChoice::end();
+                                    ?>
                             </div>
+                        <div class="col-lg-6">
+                           <?php
+                                    $authAuthChoice = AuthChoice::begin([
+                                        'baseAuthUrl' => ['site/loginTwitter'],
+                                    ]);
+                                    foreach ($authAuthChoice->getClients() as $client) {
+                                        if ($client->getName() == 'twitter') {
+                                            echo $authAuthChoice->clientLink($client, 'twitter', ['class' => 'btn-as twitter']);
+                                        }
+                                    }
+                                    AuthChoice::end();
+                                    ?>
+                        </div>
+
+                       </div>
+                       <br>
+                       <div class="row">
+                        <div class="col-lg-6">
+                          <?php
+                                    $authAuthChoice = AuthChoice::begin([
+                                        'baseAuthUrl' => ['site/loginInstagram'],
+                                    ]);
+                                    foreach ($authAuthChoice->getClients() as $client) {
+                                        if ($client->getName() == 'instagram') {
+                                            echo $authAuthChoice->clientLink($client, 'instagram', ['class' => 'btn-as instagram']);
+                                        }
+                                    }
+                                    AuthChoice::end();
+                                    ?>
+                        </div>
+                       </div>
+
                             
-                            </div>	
 
 
             <?php ActiveForm::end(); ?>
