@@ -1,7 +1,7 @@
 step 1  cd to root directory of the project in terminal or command promopt
 step 2  enter -:
 ```html
-   // php init
+    php init
 ```
 it will show like this -:
 
