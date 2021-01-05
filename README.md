@@ -11,7 +11,6 @@ step 2  enter -:
 php init
 ```
 it will show like this -:
-```html
    
 Yii Application Initialization Tool v1.0
 
@@ -21,7 +20,7 @@ Which environment do you want the application to be initialized in?
   [1] Production
 
   Your choice [0-1, or "q" to quit]
-```
+
 step 3  enter "0"
 it will show like this -:
 ================================================================================
