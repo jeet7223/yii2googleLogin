@@ -29,11 +29,11 @@ Step 5 go to ```root -> common -> config ->main-local.php ```
 <br>
 Config your database
 <br>
-DATABASE_NAME -> <strong>your database name</strong>
+<strong>DATABASE_NAME</strong>
 <br>
-DATABASE_USER_NAME -> <strong>username for database</strong>
+<strong>DATABASE_USER_NAME </strong>
 <br>
-DATABASE_PASSWORD -> <strong>password for database</strong>
+<strong>DATABASE_PASSWORD </strong>
 
 
 <?php
