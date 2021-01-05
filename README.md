@@ -9,8 +9,10 @@ step 1  cd to root directory of the project in terminal or command promopt
 step 2  enter "php init"
 it will show like this -:
 
-<div style="background:#000">
-	Yii Application Initialization Tool v1.0
+<!--background:#000 -->
+<!--color:#ffffff-->
+<!--padding:15px-->
+Yii Application Initialization Tool v1.0
 
 Which environment do you want the application to be initialized in?
 
@@ -18,8 +20,6 @@ Which environment do you want the application to be initialized in?
   [1] Production
 
   Your choice [0-1, or "q" to quit]
-</div>
-
 
 step 3  enter "0"
 it will show like this -:
