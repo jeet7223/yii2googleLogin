@@ -4,9 +4,9 @@ Step 2  enter -:
 ```html
     php init
 ```
-```diff
-- it will show like this -:
-```
+
+It will show like this -:
+
 ```html
 Yii Application Initialization Tool v1.0
 
@@ -19,9 +19,7 @@ Which environment do you want the application to be initialized in?
 ```
 Step 3  enter <strong>0</strong>
 <br>
-```diff
-- it will show like this -:
-```
+It will show like this -:
 ```html
 Initialize the application under 'Development' environment? [yes|no] 
 ```
