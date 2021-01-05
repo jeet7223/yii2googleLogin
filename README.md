@@ -25,7 +25,7 @@ Initialize the application under 'Development' environment? [yes|no]
 ```
 Step 4 enter <strong>yes</strong>
 <br>
-Step 5 go to ```html  root -> common -> config ->main-local.php ```
+Step 5 go to ```root -> common -> config ->main-local.php ```
 <br>
 Config your database
 DATABASE_NAME -> your database name
