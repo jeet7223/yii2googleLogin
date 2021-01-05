@@ -35,8 +35,8 @@ Config your database
 <br>
 <strong>DATABASE_PASSWORD </strong>
 
-
-<?php
+```html
+    <?php
 return [
     'components' => [
         'db' => [
@@ -56,8 +56,11 @@ return [
         ],
     ],
 ];
-===============================================================================
-step 6 enter "composer install"
+```
+step 6 enter -:
+```html
+     composer install
+```
 step 7 enter "php yii migrate/up"
 if user table alreay exist it will show like this -:
 ===============================================================================
