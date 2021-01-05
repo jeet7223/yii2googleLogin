@@ -2,26 +2,17 @@
     <a href="https://github.com/yiisoft" target="_blank">
         <img src="https://avatars0.githubusercontent.com/u/993323" height="100px">
     </a>
-    <h1 align="center">Yii 2 Advanced Project Template</h1>
+    <h1 align="center">Yii 2 Soical Logins</h1>
     <br>
 </p>
 step 1  cd to root directory of the project in terminal or command promopt
-step 2  enter "php init"
-it will show like this -:
-
+step 2  enter -:
 ```diff
-- text in red
-+ text in green
-! text in orange
-# text in gray
-@@ text in purple (and bold)@@
+php init
 ```
-```css
-   // code for coloring
-```
+it will show like this -:
 ```html
-   <div style="background:#000;color:#ffffff;padding:15px;">
-	   
+   
 Yii Application Initialization Tool v1.0
 
 Which environment do you want the application to be initialized in?
@@ -30,7 +21,6 @@ Which environment do you want the application to be initialized in?
   [1] Production
 
   Your choice [0-1, or "q" to quit]
-</div>
 ```
 step 3  enter "0"
 it will show like this -:
