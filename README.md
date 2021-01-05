@@ -1,8 +1,8 @@
 step 1  cd to root directory of the project in terminal or command promopt
+step 2  enter -:
 ```html
-   // code for coloring
+   // php init
 ```
-step 2  enter "php init"
 it will show like this -:
 
 Yii Application Initialization Tool v1.0
