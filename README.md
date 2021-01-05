@@ -16,6 +16,9 @@ it will show like this -:
 # text in gray
 @@ text in purple (and bold)@@
 ```
+```css
+   // code for coloring
+```
 ```html
    <div style="background:#000;color:#ffffff;padding:15px;">
 	   
