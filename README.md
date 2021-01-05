@@ -7,8 +7,8 @@
 </p>
 step 1  cd to root directory of the project in terminal or command promopt
 step 2  enter -:
-```diff
-php init
+```html
+   php init
 ```
 it will show like this -:
    
