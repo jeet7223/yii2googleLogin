@@ -96,7 +96,8 @@ to the ```require ```section of your composer.json.
 <br>
 Step 9 got to   ```root -> frontend -> config -> main.php ```
 <br>
-now paste below code in main.php under component [ ] then put your client id and secret replace by xxxxxxxxxxxxxxxxxxxxxx
+now paste below code in main.php under ```component ``` section 
+```html
 'authClientCollection' => [
         'class' => 'yii\authclient\Collection',
         'clients' => [
@@ -129,4 +130,6 @@ now paste below code in main.php under component [ ] then put your client id and
                 'consumerSecret' =>  'xxxxxxxxxxxxxxxxxxxxxxxxx',,
             ],
         ],
-===============================================================================
+```
+<br>
+then put your client id and secret replace by xxxxxxxxxxxxxxxxxxxxxx
