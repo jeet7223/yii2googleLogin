@@ -1,4 +1,4 @@
-Step 1  change directory to root directory of the project in terminal or command promopt
+Step 1  Change directory to root directory of the project in terminal or command promopt
 <br>
 Step 2  Enter -:
 ```html
@@ -132,7 +132,7 @@ now paste below code in main.php under ```component ``` section
         ],
 ```
 <br>
-Then put your client and secret 
+Then put your clientId and clientSecret 
 <br>
 You will get keys in there devlope sites
 
