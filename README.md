@@ -1,8 +1,8 @@
-Step 1  cd to root directory of the project in terminal or command promopt
+Step 1  chnage directory to root directory of the project in terminal or command promopt
 <br>
-Step 2  enter -:
+Step 2  Enter -:
 ```html
-    php init
+php init
 ```
 
 It will show like this -:
@@ -17,13 +17,13 @@ Which environment do you want the application to be initialized in?
 
   Your choice [0-1, or "q" to quit]
 ```
-Step 3  enter <strong>0</strong>
+Step 3  Enter <strong>0</strong>
 <br>
 It will show like this -:
 ```html
 Initialize the application under 'Development' environment? [yes|no] 
 ```
-Step 4 enter <strong>yes</strong>
+Step 4 Enter <strong>yes</strong>
 <br>
 Step 5 go to ```root -> common -> config ->main-local.php ```
 <br>
@@ -36,7 +36,7 @@ Config your database
 <strong>DATABASE_PASSWORD </strong>
 
 ```html
-    <?php
+<?php
 return [
     'components' => [
         'db' => [
@@ -57,19 +57,22 @@ return [
     ],
 ];
 ```
-step 6 enter -:
+Step 6 Enter -:
 ```html
-     composer install
+composer install
 ```
-step 7 enter "php yii migrate/up"
-if user table alreay exist it will show like this -:
-===============================================================================
+Step 7 Enter -:
+```html
+php yii migrate/up
+```
+If user table alreay exist it will show like this -:
+```html
 Yii Migration Tool (based on Yii v2.0.39.3)
 
 No new migrations found. Your system is up-to-date.
-===============================================================================
-if not exist it wil show like this -:
-===============================================================================
+```
+If not exist it wil show like this -:
+```html
 Yii Migration Tool (based on Yii v2.0.39.3)
 
 Creating migration history table "migration"...Done.
@@ -78,8 +81,8 @@ Total 2 new migrations to be applied:
 	m190124_110200_add_verification_token_column_to_user_table
 
 Apply the above migrations? (yes|no) [no]:
-===============================================================================
-enter "yes"
+```
+Enter <strong>yes</strong>
 step 8 got to root -> frontend -> config -> main.php
 now paste below code in main.php under component [ ] then put your client id and secret replace by xxxxxxxxxxxxxxxxxxxxxx
 ===============================================================================
