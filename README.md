@@ -1,4 +1,4 @@
-Step 1  chnage directory to root directory of the project in terminal or command promopt
+Step 1  change directory to root directory of the project in terminal or command promopt
 <br>
 Step 2  Enter -:
 ```html
@@ -83,9 +83,20 @@ Total 2 new migrations to be applied:
 Apply the above migrations? (yes|no) [no]:
 ```
 Enter <strong>yes</strong>
-step 8 got to root -> frontend -> config -> main.php
+<br>
+Step 8 Either run -:
+```html
+composer require --prefer-dist yiisoft/yii2-authclient
+```
+or add
+```html
+"yiisoft/yii2-authclient": "~2.2.0"
+```
+to the ```require ```section of your composer.json.
+<br>
+Step 9 got to   ```root -> frontend -> config -> main.php ```
+<br>
 now paste below code in main.php under component [ ] then put your client id and secret replace by xxxxxxxxxxxxxxxxxxxxxx
-===============================================================================
 'authClientCollection' => [
         'class' => 'yii\authclient\Collection',
         'clients' => [
