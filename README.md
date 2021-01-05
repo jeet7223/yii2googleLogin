@@ -5,56 +5,106 @@
     <h1 align="center">Yii 2 Advanced Project Template</h1>
     <br>
 </p>
+step 1  cd to root directory of the project in terminal or command promopt
+step 2  enter "php init"
+it will show like this -:
+===============================================================================
+Yii Application Initialization Tool v1.0
 
-Yii 2 Advanced Project Template is a skeleton [Yii 2](http://www.yiiframework.com/) application best for
-developing complex Web applications with multiple tiers.
+Which environment do you want the application to be initialized in?
 
-The template includes three tiers: front end, back end, and console, each of which
-is a separate Yii application.
+  [0] Development
+  [1] Production
 
-The template is designed to work in a team development environment. It supports
-deploying the application in different environments.
+  Your choice [0-1, or "q" to quit]
 
-Documentation is at [docs/guide/README.md](docs/guide/README.md).
+================================================================================
+step 3  enter "0"
+it will show like this -:
+================================================================================
+Initialize the application under 'Development' environment? [yes|no] 
+================================================================================
+step 4 enter "yes"
+step 5 go to root -> common -> config ->main-local.php 
+config your database below
+DATABASE_NAME -> your database name
+DATABASE_USER_NAME -> username for database
+DATABASE_PASSWORD -> password for database
+================================================================================
+<?php
+return [
+    'components' => [
+        'db' => [
+            'class' => 'yii\db\Connection',
+            'dsn' => 'mysql:host=localhost;dbname="DATABASE_NAME',  
+            'username' => 'DATABASE_USER_NAME',
+            'password' => 'DATABASE_PASSWORD',
+            'charset' => 'utf8',
+        ],
+        'mailer' => [
+            'class' => 'yii\swiftmailer\Mailer',
+            'viewPath' => '@common/mail',
+            // send all mails to a file by default. You have to set
+            // 'useFileTransport' to false and configure a transport
+            // for the mailer to send real emails.
+            'useFileTransport' => true,
+        ],
+    ],
+];
+===============================================================================
+step 6 enter "composer install"
+step 7 enter "php yii migrate/up"
+if user table alreay exist it will show like this -:
+===============================================================================
+Yii Migration Tool (based on Yii v2.0.39.3)
 
-[![Latest Stable Version](https://img.shields.io/packagist/v/yiisoft/yii2-app-advanced.svg)](https://packagist.org/packages/yiisoft/yii2-app-advanced)
-[![Total Downloads](https://img.shields.io/packagist/dt/yiisoft/yii2-app-advanced.svg)](https://packagist.org/packages/yiisoft/yii2-app-advanced)
-[![build](https://github.com/yiisoft/yii2-app-advanced/workflows/build/badge.svg)](https://github.com/yiisoft/yii2-app-advanced/actions?query=workflow%3Abuild)
+No new migrations found. Your system is up-to-date.
+===============================================================================
+if not exist it wil show like this -:
+===============================================================================
+Yii Migration Tool (based on Yii v2.0.39.3)
 
-DIRECTORY STRUCTURE
--------------------
+Creating migration history table "migration"...Done.
+Total 2 new migrations to be applied:
+	m130524_201442_init
+	m190124_110200_add_verification_token_column_to_user_table
 
-```
-common
-    config/              contains shared configurations
-    mail/                contains view files for e-mails
-    models/              contains model classes used in both backend and frontend
-    tests/               contains tests for common classes    
-console
-    config/              contains console configurations
-    controllers/         contains console controllers (commands)
-    migrations/          contains database migrations
-    models/              contains console-specific model classes
-    runtime/             contains files generated during runtime
-backend
-    assets/              contains application assets such as JavaScript and CSS
-    config/              contains backend configurations
-    controllers/         contains Web controller classes
-    models/              contains backend-specific model classes
-    runtime/             contains files generated during runtime
-    tests/               contains tests for backend application    
-    views/               contains view files for the Web application
-    web/                 contains the entry script and Web resources
-frontend
-    assets/              contains application assets such as JavaScript and CSS
-    config/              contains frontend configurations
-    controllers/         contains Web controller classes
-    models/              contains frontend-specific model classes
-    runtime/             contains files generated during runtime
-    tests/               contains tests for frontend application
-    views/               contains view files for the Web application
-    web/                 contains the entry script and Web resources
-    widgets/             contains frontend widgets
-vendor/                  contains dependent 3rd-party packages
-environments/            contains environment-based overrides
-```
+Apply the above migrations? (yes|no) [no]:
+===============================================================================
+enter "yes"
+step 8 got to root -> frontend -> config -> main.php
+now paste below code in main.php under component [ ] then put your client id and secret replace by xxxxxxxxxxxxxxxxxxxxxx
+===============================================================================
+'authClientCollection' => [
+        'class' => 'yii\authclient\Collection',
+        'clients' => [
+            'google' => [
+                'class' => 'yii\authclient\clients\Google',
+                'clientId' => 'xxxxxxxxxxxxxxxxxxxxxxxx',
+                'clientSecret' => 'xxxxxxxxxxxxxxxxxxxxxx',
+            ],
+            'facebook' => [
+                'class' => 'yii\authclient\clients\Facebook',
+                'clientId' =>  'xxxxxxxxxxxxxxxxxxxxxxxxx',
+                'clientSecret' =>  'xxxxxxxxxxxxxxxxxxxxxxxxx',
+            ],
+            'instagram' => [
+                'class' => 'kotchuprik\authclient\Instagram',
+                'clientId' => 'xxxxxxxxxxxxxxxxxxxxxxxxxxx',
+                'clientSecret' => 'xxxxxxxxxxxxxxxxxxxxxxxxx',
+            ],
+            'linkedin' => [
+                'class' => 'yii\authclient\clients\LinkedIn',
+                'clientId' =>  'xxxxxxxxxxxxxxxxxxxxxxxxx',
+                'clientSecret' =>  'xxxxxxxxxxxxxxxxxxxxxxxxx',
+            ],
+           'twitter' => [
+                'class' => 'yii\authclient\clients\Twitter',
+                'attributeParams' => [
+                    'include_email' => 'true'
+                ],
+                'consumerKey' =>  'xxxxxxxxxxxxxxxxxxxxxxxxx',
+                'consumerSecret' =>  'xxxxxxxxxxxxxxxxxxxxxxxxx',,
+            ],
+        ],
+===============================================================================
