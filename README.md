@@ -4,7 +4,9 @@ Step 2  enter -:
 ```html
     php init
 ```
-it will show like this -:
+```diff
+- it will show like this -:
+```
 ```html
 Yii Application Initialization Tool v1.0
 
@@ -16,17 +18,21 @@ Which environment do you want the application to be initialized in?
   Your choice [0-1, or "q" to quit]
 ```
 Step 3  enter <strong>0</strong>
-it will show like this -:
+<br>
+```diff
+- it will show like this -:
+```
 ```html
 Initialize the application under 'Development' environment? [yes|no] 
 ```
 Step 4 enter <strong>yes</strong>
+<br>
 Step 5 go to root -> common -> config ->main-local.php 
 config your database below
 DATABASE_NAME -> your database name
 DATABASE_USER_NAME -> username for database
 DATABASE_PASSWORD -> password for database
-================================================================================
+
 <?php
 return [
     'components' => [
