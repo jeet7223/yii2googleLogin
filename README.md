@@ -17,7 +17,13 @@ Which environment do you want the application to be initialized in?
   [1] Production
 
   Your choice [0-1, or "q" to quit]
-  - !(https://via.placeholder.com/15/f03c15/000000?text=+) `#f03c15`
+```diff
+- text in red
++ text in green
+! text in orange
+# text in gray
+@@ text in purple (and bold)@@
+```
 step 3  enter "0"
 it will show like this -:
 ================================================================================
