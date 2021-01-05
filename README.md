@@ -25,8 +25,9 @@ Initialize the application under 'Development' environment? [yes|no]
 ```
 Step 4 enter <strong>yes</strong>
 <br>
-Step 5 go to ```diff root -> common -> config ->main-local.php ```
-config your database below
+Step 5 go to ```diff - root -> common -> config ->main-local.php ```
+<br>
+Config your database
 DATABASE_NAME -> your database name
 DATABASE_USER_NAME -> username for database
 DATABASE_PASSWORD -> password for database
