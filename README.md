@@ -9,17 +9,15 @@ step 1  cd to root directory of the project in terminal or command promopt
 step 2  enter "php init"
 it will show like this -:
 
-<!--background:#000 -->
-<!--color:#ffffff-->
-<!--padding:15px-->
-Yii Application Initialization Tool v1.0
+
+- ![#f03c15](Yii Application Initialization Tool v1.0
 
 Which environment do you want the application to be initialized in?
 
   [0] Development
   [1] Production
 
-  Your choice [0-1, or "q" to quit]
+  Your choice [0-1, or "q" to quit])`#f03c15`
 
 step 3  enter "0"
 it will show like this -:
