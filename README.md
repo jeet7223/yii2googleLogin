@@ -132,4 +132,7 @@ now paste below code in main.php under ```component ``` section
         ],
 ```
 <br>
-then put your client id and secret replace by xxxxxxxxxxxxxxxxxxxxxx
+Then put your client and secret 
+<br>
+You will get keys in there devlope sites
+
