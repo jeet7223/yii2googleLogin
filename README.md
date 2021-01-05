@@ -28,9 +28,13 @@ Step 4 enter <strong>yes</strong>
 Step 5 go to ```root -> common -> config ->main-local.php ```
 <br>
 Config your database
-DATABASE_NAME -> your database name
-DATABASE_USER_NAME -> username for database
-DATABASE_PASSWORD -> password for database
+<br>
+DATABASE_NAME -> <strong>your database name</strong>
+<br>
+DATABASE_USER_NAME -> <strong>username for database</strong>
+<br>
+DATABASE_PASSWORD -> <strong>password for database</strong>
+
 
 <?php
 return [
