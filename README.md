@@ -1,6 +1,6 @@
-step 1  cd to root directory of the project in terminal or command promopt
+Step 1  cd to root directory of the project in terminal or command promopt
 <br>
-step 2  enter -:
+Step 2  enter -:
 ```html
     php init
 ```
@@ -15,13 +15,13 @@ Which environment do you want the application to be initialized in?
 
   Your choice [0-1, or "q" to quit]
 ```
-step 3  enter "0"
+Step 3  enter <strong>0</strong>
 it will show like this -:
-================================================================================
+```html
 Initialize the application under 'Development' environment? [yes|no] 
-================================================================================
-step 4 enter "yes"
-step 5 go to root -> common -> config ->main-local.php 
+```
+Step 4 enter <strong>yes</strong>
+Step 5 go to root -> common -> config ->main-local.php 
 config your database below
 DATABASE_NAME -> your database name
 DATABASE_USER_NAME -> username for database
