@@ -135,7 +135,13 @@ now paste below code in main.php under ```component ``` section
 Then put your clientId and clientSecret 
 <br>
 You will get keys in there devlope sites
+<br>
+For roll back access controll 
+<br>
+run this two commands in root directory
 
 ```
-php init
+php yii migrate --migrationPath=@yii/rbac/migrations
+php yii rbac/init
 ```
+You can check database now extra table is created for roll back access control now if a new user login it will asign user role to new user
