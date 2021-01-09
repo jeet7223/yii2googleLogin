@@ -141,14 +141,14 @@ For Rollback access control(RBAC)
 <br>
 change directory to root directory and run
 <br>
-```
+```html
 php yii migrate --migrationPath=@yii/rbac/migrations
 
 ```
 <br>
 Next run
 <br>
-```
+```html
 php yii rbac/init
 ```
 You can check databasw now extra table is created for roll back access control now if a new user login it will asign user role to new user
