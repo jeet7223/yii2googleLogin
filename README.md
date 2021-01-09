@@ -139,8 +139,8 @@ You will get keys in there devlope sites
 For Rollback access control
 <br>
 change directory to root directory and run
-```
-php yii migrate --migrationPath=@yii/rbac/migrations
+<br>
+```php yii migrate --migrationPath=@yii/rbac/migrations
 php yii rbac/init
 ```
 You can check database now extra table is created for roll back access control now if a new user login it will asign user role to new user
