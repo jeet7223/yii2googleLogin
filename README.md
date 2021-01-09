@@ -93,6 +93,7 @@ php yii migrate --migrationPath=@yii/rbac/migrations
 php yii rbac/init
 ```
 You can check database now extra table is created for roll back access control now if a new user login it will asign user role to new user
+<br>
 Step 8 Either run -:
 ```html
 composer require --prefer-dist yiisoft/yii2-authclient
