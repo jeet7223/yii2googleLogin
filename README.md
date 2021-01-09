@@ -139,7 +139,7 @@ You will get keys in there devlope sites
 For Rollback access control
 <br>
 change directory to root directory and run
-```html
+```
 php yii migrate --migrationPath=@yii/rbac/migrations
 php yii rbac/init
 ```
