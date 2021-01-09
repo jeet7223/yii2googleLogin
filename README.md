@@ -144,6 +144,7 @@ change directory to root directory and run-:
    php yii migrate --migrationPath=@yii/rbac/migrations
 ```
 Next run-:
+<br>
 ```html
   php yii rbac/init
 ```
