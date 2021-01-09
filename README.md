@@ -140,6 +140,6 @@ For Rollback access control
 <br>
 change directory to root directory and run
 <br>
-```html
+```
 php init
 ```
