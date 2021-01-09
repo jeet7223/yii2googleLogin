@@ -135,11 +135,7 @@ now paste below code in main.php under ```component ``` section
 Then put your clientId and clientSecret 
 <br>
 You will get keys in there devlope sites
-<br>
-For Rollback access control
-<br>
-change directory to root directory and run
-<br>
+
 ```
 php init
 ```
