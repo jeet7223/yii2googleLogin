@@ -143,4 +143,3 @@ change directory to root directory and run
 ```html
 php init
 ```
-You can check database now extra table is created for roll back access control now if a new user login it will asign user role to new user
