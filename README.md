@@ -84,6 +84,15 @@ Apply the above migrations? (yes|no) [no]:
 ```
 Enter <strong>yes</strong>
 <br>
+Roll back access controll 
+<br>
+run this two commands in root directory
+
+```
+php yii migrate --migrationPath=@yii/rbac/migrations
+php yii rbac/init
+```
+You can check database now extra table is created for roll back access control now if a new user login it will asign user role to new user
 Step 8 Either run -:
 ```html
 composer require --prefer-dist yiisoft/yii2-authclient
@@ -135,13 +144,5 @@ now paste below code in main.php under ```component ``` section
 Then put your clientId and clientSecret 
 <br>
 You will get keys in there devlope sites
-<br>
-For roll back access controll 
-<br>
-run this two commands in root directory
 
-```
-php yii migrate --migrationPath=@yii/rbac/migrations
-php yii rbac/init
-```
-You can check database now extra table is created for roll back access control now if a new user login it will asign user role to new user
+
