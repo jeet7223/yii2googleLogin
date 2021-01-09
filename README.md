@@ -140,9 +140,12 @@ You will get keys in there devlope sites
 For Rollback access control(RBAC)
 <br>
 change directory to root directory and run
+<br>
 ```
 php yii migrate --migrationPath=@yii/rbac/migrations
+
 ```
+<br>
 Next run
 <br>
 ```
